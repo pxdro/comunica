@@ -73,6 +73,8 @@ export function Keyboard({
 
   const rows: KItem[][] = useMemo(() => {
     const r: KItem[][] = []
+    // "voltar" como primeira opção (linha única, confirma direto)
+    r.push([{ label: '↩ voltar', kind: 'action', run: onBack }])
     if (predictions.length) {
       r.push(
         predictions.map((w) => ({
@@ -95,8 +97,6 @@ export function Keyboard({
       { label: '🔊 falar', kind: 'action', run: () => {}, say: text },
       { label: '✕ limpar', kind: 'action', run: clearAll }
     ])
-    // "voltar" sozinho, na última linha
-    r.push([{ label: '↩ voltar', kind: 'action', run: onBack }])
     return r
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [predictions, text, learned])
