@@ -1,0 +1,9 @@
+# Configuração de build do Netlify (autodetectada ao conectar o repositório).
+# Rodamos "setup" antes do build para regenerar o wasm do MediaPipe (do
+# node_modules) e baixar o modelo — assim não precisamos versionar os ~36MB.
+[build]
+  command = "npm run setup && npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"

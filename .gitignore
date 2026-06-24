@@ -1,0 +1,8 @@
+node_modules
+dist
+dist-ssr
+*.local
+.DS_Store
+# Assets baixados/copiados pelo script de setup (gerados, não versionar)
+public/mediapipe
+public/models
